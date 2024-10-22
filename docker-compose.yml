@@ -12,11 +12,11 @@ services:
     ports:
       - "5432:5432"
 
-  strapi-app:
-    build:
-      context: .
-      args:
-        NODE_ENV: ${NODE_ENV}
+  # strapi-app:
+  #   build:
+  #     context: .
+  #     args:
+  #       NODE_ENV: ${NODE_ENV}
     environment:
       DATABASE_CLIENT: postgres
       DATABASE_HOST: postgres
