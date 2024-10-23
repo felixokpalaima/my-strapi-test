@@ -1,16 +1,16 @@
 # For Local Testing of the Strapi Application
 # services:
-#   postgres:
-#     image: postgres:latest
-#     container_name: postgres
-#     environment:
-#       POSTGRES_USER: strapi
-#       POSTGRES_PASSWORD: strapi
-#       POSTGRES_DB: strapi
-#     volumes:
-#       - postgres_data:/var/lib/postgresql/data
-#     ports:
-#       - "5432:5432"
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+      POSTGRES_DB: strapi
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
 
   strapi-app:
     build:
