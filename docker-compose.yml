@@ -1,5 +1,5 @@
 # For Local Testing of the Strapi Application
-# services:
+services:
   # postgres:
   #   image: postgres:latest
   #   container_name: postgres
@@ -12,18 +12,19 @@
   #   ports:
   #     - "5432:5432"
 
-  # strapi-app:
-  #   build:
-  #     context: .
-  #     args:
-  #       NODE_ENV: ${NODE_ENV}
-  #   environment:
+  strapi-app:
+    build:
+      context: .
+      args:
+        NODE_ENV: ${NODE_ENV}
+    environment:
       DATABASE_CLIENT: postgres
-      DATABASE_HOST: postgres
-      DATABASE_PORT: 5432
-      DATABASE_NAME: strapi
-      DATABASE_USERNAME: strapi
-      DATABASE_PASSWORD: strapi
+      # DATABASE_HOST: postgres
+      DATABASE_URL: postgresql://openretail-core_owner:RkPzp5Ye9LJW@ep-winter-snowflake-a2raatbk.eu-central-1.aws.neon.tech/openretail-core?sslmode=require
+      # DATABASE_PORT: 5432
+      # DATABASE_NAME: strapi
+      # DATABASE_USERNAME: strapi
+      # DATABASE_PASSWORD: strapi
       JWT_SECRET: ${JWT_SECRET}
       ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
       APP_KEYS: ${APP_KEYS}
@@ -33,11 +34,11 @@
       - .env
     ports:
       - "1337:1337"
-    depends_on:
-      - postgres
-    volumes:
-      - /src/app
-    command: npm start
+    # depends_on:
+    #   - postgres
+    # volumes:
+    #   - /src/app
+    # command: npm start
 
-volumes:
-  postgres_data:
+# volumes:
+#   postgres_data:

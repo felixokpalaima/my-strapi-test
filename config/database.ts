@@ -24,7 +24,7 @@ export default ({ env }) => {
     },
     postgres: {
       connection: {
-        connectionString: env('DATABASE_URL'),
+        connectionString: 'postgresql://openretail-core_owner:RkPzp5Ye9LJW@ep-winter-snowflake-a2raatbk.eu-central-1.aws.neon.tech/openretail-core?sslmode=require',
         host: env('DATABASE_HOST', 'localhost'),
         port: env.int('DATABASE_PORT', 5432),
         database: env('DATABASE_NAME', 'postgres'),
