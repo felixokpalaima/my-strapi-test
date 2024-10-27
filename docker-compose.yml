@@ -29,15 +29,15 @@
       APP_KEYS: ${APP_KEYS}
       API_TOKEN_SALT: ${API_TOKEN_SALT}
       TRANSFER_TOKEN_SALT: ${TRANSFER_TOKEN_SALT}
-    env_file:
-      - .env
-    ports:
-      - "1337:1337"
-    depends_on:
-      - postgres
-    volumes:
-      - /src/app
-    command: npm start
+#     env_file:
+#       - .env
+#     ports:
+#       - "1337:1337"
+#     depends_on:
+#       - postgres
+#     volumes:
+#       - /src/app
+#     command: npm start
 
-volumes:
-  postgres_data:
+# volumes:
+#   postgres_data:
