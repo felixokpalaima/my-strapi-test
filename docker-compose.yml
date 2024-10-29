@@ -1,23 +1,23 @@
 # For Local Testing of the Strapi Application
-# services:
-  # postgres:
-  #   image: postgres:latest
-  #   container_name: postgres
-  #   environment:
-  #     POSTGRES_USER: strapi
-  #     POSTGRES_PASSWORD: strapi
-  #     POSTGRES_DB: strapi
-  #   volumes:
-  #     - postgres_data:/var/lib/postgresql/data
-  #   ports:
-  #     - "5432:5432"
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+      POSTGRES_DB: strapi
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
 
-  # strapi-app:
-  #   build:
-  #     context: .
-  #     args:
-  #       NODE_ENV: ${NODE_ENV}
-  #   environment:
+  strapi-app:
+    build:
+      context: .
+      args:
+        NODE_ENV: ${NODE_ENV}
+    environment:
       DATABASE_CLIENT: postgres
       DATABASE_HOST: postgres
       DATABASE_PORT: 5432
@@ -29,15 +29,15 @@
       APP_KEYS: ${APP_KEYS}
       API_TOKEN_SALT: ${API_TOKEN_SALT}
       TRANSFER_TOKEN_SALT: ${TRANSFER_TOKEN_SALT}
-#     env_file:
-#       - .env
-#     ports:
-#       - "1337:1337"
-#     depends_on:
-#       - postgres
-#     volumes:
-#       - /src/app
-#     command: npm start
+    env_file:
+      - .env
+    ports:
+      - "1337:1337"
+    depends_on:
+      - postgres
+    volumes:
+      - /src/app
+    # command: npm start
 
-# volumes:
-#   postgres_data:
+volumes:
+  postgres_data:

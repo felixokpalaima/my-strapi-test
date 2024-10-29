@@ -11,6 +11,8 @@
     "strapi": "strapi"
   },
   "dependencies": {
+    "vite": "0.20.2",
+    "@strapi-community/strapi-provider-upload-google-cloud-storage": "^4.10.5",
     "@strapi/plugin-cloud": "5.1.0",
     "@strapi/plugin-users-permissions": "5.1.0",
     "@strapi/strapi": "5.1.0",
